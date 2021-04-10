@@ -25,5 +25,8 @@ class PowerPlantSvcTest(TestCase):
 
         self.assertLess(self.svc.get_pwp_load(self.svc.powerplants[-2]), 150)
 
+    def test_prod_cost(self):
+        self.assertGreater(self.svc.get_prod_cost(self.svc.powerplants[1]), 13.4)
 
+        self.assertEqual(self.svc.get_prod_cost(self.svc.powerplants[-2]), 0)
 

@@ -26,6 +26,13 @@ class PowerplantSvc:
             return pwp.pmax * self.day_data.wind / 100
         return pwp.pmax
 
+    def get_prod_cost(self, pwp):
+        if pwp.type == "gasfired":
+            return self.day_data.gas * 1/pwp.efficiency
+        if pwp.type == "kerosine":
+            return self.day_data.kerosine * 1/pwp.efficiency
+        return 0
+
 
 
 
