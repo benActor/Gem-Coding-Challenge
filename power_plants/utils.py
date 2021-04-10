@@ -45,5 +45,6 @@ class PowerplantSvc:
             comb += list(combinations(pwp_set, i))
         return comb
 
-
+    def get_optimal_combination(self, pwp_combinations, value):
+        return min(pwp_combinations, key=lambda x: abs(value - self.compute_load_of_set(x)))
 
