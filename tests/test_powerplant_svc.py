@@ -18,3 +18,12 @@ class PowerPlantSvcTest(TestCase):
 
         self.assertIsInstance(self.svc.day_data, DailyData)
 
+    def test_get_pmax(self):
+        self.assertEqual(460, self.svc.get_pwp_load(self.svc.powerplants[1]))
+
+        self.assertEqual(21.6, self.svc.get_pwp_load(self.svc.powerplants[-1]))
+
+        self.assertLess(self.svc.get_pwp_load(self.svc.powerplants[-2]), 150)
+
+
+

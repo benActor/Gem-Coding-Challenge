@@ -1,4 +1,5 @@
 from models import PowerPlant, DailyData
+from itertools import combinations
 
 
 class PowerplantSvc:
@@ -19,3 +20,12 @@ class PowerplantSvc:
     @property
     def day_data(self):
         return self.__day_data
+
+    def get_pwp_load(self, pwp):
+        if pwp.type == "windturbine":
+            return pwp.pmax * self.day_data.wind / 100
+        return pwp.pmax
+
+
+
+
