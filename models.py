@@ -10,6 +10,9 @@ class PowerPlant:
         else:
             return self.name == other.name and self.type == other.type
 
+    def __repr__(self):
+        return f"name: {self.name}, type: {self.type}, efficiency: {self.efficiency}, pmax: {self.pmax} "
+
 class DailyData:
     def __init__(self, load, gas, kerosine, co2, wind):
         self.load, self.gas, self.kerosine, self.co2, self.wind = load, gas, kerosine, co2, wind
