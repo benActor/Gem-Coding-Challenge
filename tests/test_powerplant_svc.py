@@ -37,3 +37,8 @@ class PowerPlantSvcTest(TestCase):
 
         self.assertEqual(1130, self.svc.compute_load_of_set(self.svc.powerplants[:3]))
 
+    def test_pwp_combination(self):
+
+        # assert there are 7 possible combinations in a set of 3 powerPlants
+        self.assertEqual(7, len(self.svc.pwp_combinations(self.svc.powerplants[:3])))
+

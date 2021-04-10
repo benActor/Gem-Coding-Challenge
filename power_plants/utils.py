@@ -36,6 +36,11 @@ class PowerplantSvc:
     def compute_load_of_set(self, pwp_set):
         return sum(map(lambda x: self.get_pwp_load(x), pwp_set))
 
+    def pwp_combinations(self, pwp_set):
+        comb = []
+        for i in range(1, len(pwp_set) + 1):
+            comb += list(combinations(pwp_set, i))
+        return comb
 
 
 
