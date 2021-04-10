@@ -30,3 +30,10 @@ class PowerPlantSvcTest(TestCase):
 
         self.assertEqual(self.svc.get_prod_cost(self.svc.powerplants[-2]), 0)
 
+    def test_load_of_set(self):
+        self.assertEqual(460, self.svc.compute_load_of_set(self.svc.powerplants[:1]))
+
+        self.assertEqual(1146, self.svc.compute_load_of_set(self.svc.powerplants[:4]))
+
+        self.assertEqual(1130, self.svc.compute_load_of_set(self.svc.powerplants[:3]))
+

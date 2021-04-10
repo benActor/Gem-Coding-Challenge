@@ -33,6 +33,9 @@ class PowerplantSvc:
             return self.day_data.kerosine * 1/pwp.efficiency
         return 0
 
+    def compute_load_of_set(self, pwp_set):
+        return sum(map(lambda x: self.get_pwp_load(x), pwp_set))
+
 
 
 
