@@ -45,13 +45,10 @@ class PowerPlantSvcTest(TestCase):
     def test_pwp_combination(self):
 
         # assert there are 7 possible combinations in a set of 3 powerPlants
-        self.assertEqual(7, len(self.svc.pwp_combinations(self.svc.powerplants[:3])))
+        self.assertEqual(63, len(self.svc.pwp_combinations()))
 
     def test_get_optimal_combi(self):
-        comb = self.svc.pwp_combinations(self.svc.powerplants)
-        value = self.svc.day_data.load
-
-        opt = self.svc.get_optimal_combination(comb, value)
+        opt = self.svc.get_optimal_combination()
 
         self.assertAlmostEqual(481.6, self.svc.compute_load_of_set(opt), 0)
 

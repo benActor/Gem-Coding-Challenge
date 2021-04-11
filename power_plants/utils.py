@@ -39,12 +39,12 @@ class PowerplantSvc:
     def compute_load_of_set(self, pwp_set):
         return sum(map(lambda x: self.get_pwp_load(x), pwp_set))
 
-    def pwp_combinations(self, pwp_set):
+    def pwp_combinations(self):
         comb = []
-        for i in range(1, len(pwp_set) + 1):
-            comb += list(combinations(pwp_set, i))
+        for i in range(1, len(self.powerplants) + 1):
+            comb += list(combinations(self.powerplants, i))
         return comb
 
-    def get_optimal_combination(self, pwp_combinations, value):
-        return min(pwp_combinations, key=lambda x: abs(value - self.compute_load_of_set(x)))
+    def get_optimal_combination(self):
+        return min(self.pwp_combinations(), key=lambda x: abs(self.day_data.load - self.compute_load_of_set(x)))
 
