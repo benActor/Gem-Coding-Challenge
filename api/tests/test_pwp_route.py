@@ -16,6 +16,7 @@ class RouteTest(TestCase):
         self.assertEqual(result.status_code, 200)
 
     def test_running_port(self):
-        #self.assertEqual(8888, app.config["FLASK_RUN_PORT"])
-        pass
+        port = app.config["SERVER_NAME"].split(":")[1]
+        self.assertEqual(port, "8888")
+
 
