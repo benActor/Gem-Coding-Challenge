@@ -1,6 +1,6 @@
 from unittest import TestCase
-from power_plants.utils import PowerplantSvc
-from models import PowerPlant, DailyData
+from api.power_plants.utils import PowerplantSvc
+from api.models import PowerPlant, DailyData
 import json
 
 

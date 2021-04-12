@@ -1,5 +1,5 @@
 from unittest import TestCase
-from models import PowerPlant, DailyData
+from api.models import PowerPlant, DailyData
 
 
 class PowerPlantTest(TestCase):

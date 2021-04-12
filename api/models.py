@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 class PowerPlant:
     def __init__(self, name, type, efficiency, pmin, pmax):
         self.name, self.type, self.efficiency, self.pmin, self.pmax = name, type, efficiency, pmin, pmax
@@ -12,6 +13,7 @@ class PowerPlant:
 
     def __repr__(self):
         return f"name: {self.name}, type: {self.type}, efficiency: {self.efficiency}, pmax: {self.pmax} "
+
 
 class DailyData:
     def __init__(self, load, gas, kerosine, co2, wind):

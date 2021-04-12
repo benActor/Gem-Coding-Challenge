@@ -1,11 +1,10 @@
 from unittest import TestCase
-from app import app
+from api import app
 import json
 
 
 class RouteTest(TestCase):
     def setUp(self) -> None:
-        app.debug = True
 
         self.app = app.test_client()
 
@@ -16,4 +15,7 @@ class RouteTest(TestCase):
 
         self.assertEqual(result.status_code, 200)
 
-        print(result.json)
+    def test_running_port(self):
+        #self.assertEqual(8888, app.config["FLASK_RUN_PORT"])
+        pass
+
