@@ -10,9 +10,9 @@ To launch the Api pull the
 
 1. pull the code and move to directory coding-challenge
 
-2. run pip install -r requirements.txt
+2. run *_pip install -r requirements.txt_*
 
-3. run python app.py
+3. run *_python app.py_*
 
 The API exposes a route for POST REQUEST at _/productionplan_
 
