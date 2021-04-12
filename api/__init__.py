@@ -3,7 +3,8 @@ from api.config import Config
 from api.power_plants.route import production
 
 
-app = Flask(__name__)
-app.config.from_object(Config)
-app.register_blueprint(production)
-
+def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(config_class)
+    app.register_blueprint(production)
+    return app
