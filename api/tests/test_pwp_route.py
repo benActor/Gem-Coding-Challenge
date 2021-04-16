@@ -20,9 +20,9 @@ class RouteTest(TestCase):
 
         self.assertEqual(result.json, self.data["response"])
 
-    def test_running_port(self):
-        port = self.app.config["SERVER_NAME"].split(":")[1]
-        self.assertEqual(port, "8888")
+    # def test_running_port(self):
+    #     port = self.app.config["SERVER_NAME"].split(":")[1]
+    #     self.assertEqual(port, "8888")
 
     def test_web_socket(self):
         client_message = socketio.test_client(self.app)
